@@ -5,4 +5,8 @@ public class Parrot implements Pet{
     public void say() {
         System.out.println("Гоша хороший");
     }
+
+    public Parrot() {
+        System.out.println("Parrot bean is created");
+    }
 }
