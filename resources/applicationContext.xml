@@ -12,13 +12,19 @@
           class="spring_introduction.Parrot">
     </bean>
 
-    <!-- создание бина класса Person-->
+    <!-- создание бина класса Person Зависимость с помощью конструктора-->
+    <!-- <bean id="myPerson"
+           class="spring_introduction.Person"> -->
+    <!-- это передача в конструктор-->
+    <!--  <constructor-arg ref = "myPet"/>
+  </bean>  -->
+
+    <!-- создание бина класса Person Зависимость с помощью сеттера-->
     <bean id="myPerson"
           class="spring_introduction.Person">
-        <!-- это передача в конструктор-->
-        <constructor-arg ref = "myPet"/>
+    <!-- это передача в сеттер-->
+        <property name="pet" ref="myPet"/>
     </bean>
 
 
-
-  </beans>
+</beans>
