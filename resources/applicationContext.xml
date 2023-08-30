@@ -24,7 +24,12 @@
           class="spring_introduction.Person">
     <!-- это передача в сеттер-->
         <property name="pet" ref="myPet"/>
+
+        <property name="surname" value="Zulin"/>
+        <property name="age" value="49"/>
+
     </bean>
+
 
 
 </beans>
