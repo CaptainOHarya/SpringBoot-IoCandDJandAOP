@@ -11,7 +11,7 @@
     <!-- связывание объекта Pet, singleton scope по умолчанию, его можно не указывать-->
     <bean id="myPet"
           class="spring_introduction.Parrot"
-          scope="singleton">
+          scope="prototype">
 
     </bean>
 
