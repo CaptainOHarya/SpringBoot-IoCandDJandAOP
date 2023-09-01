@@ -7,6 +7,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:myApp.properties"/>
+
     <!-- связывание объекта Pet-->
     <bean id="myPet"
           class="spring_introduction.Parrot">
@@ -25,8 +27,8 @@
     <!-- это передача в сеттер-->
         <property name="pet" ref="myPet"/>
 
-        <property name="surname" value="Zulin"/>
-        <property name="age" value="49"/>
+        <property name="surname" value="${person.surname}"/>
+        <property name="age" value="${person.age}"/>
 
     </bean>
 
