@@ -7,6 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!-- объявление файла, откуда берём зависимости-->
     <context:property-placeholder location="classpath:myApp.properties"/>
 
     <!-- связывание объекта Pet-->
@@ -27,6 +28,7 @@
     <!-- это передача в сеттер-->
         <property name="pet" ref="myPet"/>
 
+        <!-- Берём значение из файла-->
         <property name="surname" value="${person.surname}"/>
         <property name="age" value="${person.age}"/>
 
