@@ -2,6 +2,7 @@ package spring_introduction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component("personBean")
@@ -11,7 +12,14 @@ public class Person {
     @Qualifier("dog")// dog - бин по умолчанию
     // @Qualifier("catBean") - нужен если несколько таких pet
     private Pet pet;
+   // @Value("Zulin") - это хардкодовое написание
+    // лучше через файл настроек
+    @Value("${person.surname}")
     private String surname;
+
+    // @Value("49") - - это хардкодовое написание
+    // лучше через файл настроек
+    @Value("${person.age}")
     private int age;
 
     public String getSurname() {
