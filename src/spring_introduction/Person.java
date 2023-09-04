@@ -6,9 +6,10 @@ import org.springframework.stereotype.Component;
 
 @Component("personBean")
 public class Person {
-    @Qualifier("catBean")
-    // @Qualifier("catBean") - нужен если несколько таких pet
+
     @Autowired
+    @Qualifier("dog")// dog - бин по умолчанию
+    // @Qualifier("catBean") - нужен если несколько таких pet
     private Pet pet;
     private String surname;
     private int age;
