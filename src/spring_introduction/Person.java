@@ -28,18 +28,21 @@ public class Person {
         this.age = age;
     }
 
-   /* public Person() {
+    public Person() {
         System.out.println("Person bean is created");
-    }*/
+    }
 
-    @Autowired
+ /*   @Autowired
     // @Qualifier("catBean") - нужен если несколько таких pet
     public Person(@Qualifier("catBean") Pet pet) {
         System.out.println("Person bean is created");
         this.pet = pet;
-    }
+    }*/
 
-    public void setPet(Pet pet) {
+
+    @Autowired
+    // @Qualifier("catBean") - нужен если несколько таких pet
+    public void setPet(@Qualifier("catBean") Pet pet) {
         System.out.println("Class Person: set pet");
         this.pet = pet;
     }
