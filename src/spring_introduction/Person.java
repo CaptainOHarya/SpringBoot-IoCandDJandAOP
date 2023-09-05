@@ -8,18 +8,18 @@ import org.springframework.stereotype.Component;
 @Component("personBean")
 public class Person {
 
-    @Autowired
-    @Qualifier("dog")// dog - бин по умолчанию
+    //@Autowired
+    //@Qualifier("dog")// dog - бин по умолчанию
     // @Qualifier("catBean") - нужен если несколько таких pet
     private Pet pet;
    // @Value("Zulin") - это хардкодовое написание
     // лучше через файл настроек
-    @Value("${person.surname}")
+    //@Value("${person.surname}")
     private String surname;
 
     // @Value("49") - - это хардкодовое написание
     // лучше через файл настроек
-    @Value("${person.age}")
+   // @Value("${person.age}")
     private int age;
 
     public String getSurname() {
