@@ -44,12 +44,12 @@ public class Person {
         System.out.println("Person bean is created");
     }
 
- /*   @Autowired
+    @Autowired
     // @Qualifier("catBean") - нужен если несколько таких pet
     public Person(@Qualifier("catBean") Pet pet) {
         System.out.println("Person bean is created");
         this.pet = pet;
-    }*/
+    }
 
 
     // @Autowired

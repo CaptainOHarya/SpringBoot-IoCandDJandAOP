@@ -18,21 +18,21 @@ public class Dog implements Pet{
         this.name = name;
     }*/
 
-    @PostConstruct
+ /*   @PostConstruct
     public void init(){
         System.out.println("Class Dog: init method");
 
     }
-
+*/
 
     public Dog() {
         System.out.println("Dog bean is created");
     }
-    @PreDestroy
+ /*   @PreDestroy
     public void destroy() {
         System.out.println("Class Dog: destroy method");
     }
-
+*/
     @Override
     public void say() {
         System.out.println("Гав - Гав");
