@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 public class UniLibrary extends AbstractLibrary{
 
     // здесь рассмотрим метод, принимающий параметры
-    public void getBook(String bookName, String bookName2) {
-        System.out.println("Мы берём книгу из библиотеки Университета: " + bookName + " и книгу " + bookName2);
+    public void getBook(Book book) {
+        System.out.println("Мы берём книгу из библиотеки Университета: " + book.getName());
 
     }
 
