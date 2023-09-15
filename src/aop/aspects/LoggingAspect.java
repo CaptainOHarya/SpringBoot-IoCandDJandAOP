@@ -8,10 +8,17 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class LoggingAspect {
     //  метод, который вызовется до getBook
-    @Before("execution(public void getBook())")
+    // @Before("execution(public void getBook())")
+    // @Before("execution(public void aop.UniLibrary.getBook())") // можно написать и  полное имя класса
+    @Before("execution(public void get*())") // можно использовать Wild card (* - шаблон)
     public void beforeGetBookAdvice() {
         // здесь указывается что должно произойти до вызова метода getBook()
         System.out.println("beforeGetBookAdvice: попытка получить книгу");
     }
 
+    @Before("execution(* returnBook())")// в данном случае * означает любой тип и любой acsess modifier
+    public void beforeReturnBookAdvice() {
+        // здесь указывается что должно произойти до вызова метода getBook()
+        System.out.println("beforeGetBookAdvice: попытка вернуть книгу");
+    }
 }
