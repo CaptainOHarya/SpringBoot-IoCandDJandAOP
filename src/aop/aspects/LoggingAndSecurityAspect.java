@@ -8,7 +8,44 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class LoggingAndSecurityAspect {
-    // Объявление Pointcut
+    // Объявление Pointcut для get методов
+    @Pointcut("execution(* aop.UniLibrary.get*())")
+    private void allGetMethodsFromUniLibrary() {
+
+    }
+
+    // Объявление Pointcut для return методов
+    @Pointcut("execution(* aop.UniLibrary.return*())")
+    private void allReturnMethodsFromUniLibrary() {
+
+    }
+
+    // А теперь создаём Pointcut, который является комбинацией 1ого и 2ого Pointcuts
+    @Pointcut("allGetMethodsFromUniLibrary() || allReturnMethodsFromUniLibrary()")
+    private void allGetAndReturnMethodsFromUniLibrary() {
+
+    }
+
+    @Before("allGetMethodsFromUniLibrary()")
+    public void beforeGetLoggingAdvice(){
+        System.out.println("beforeGetLoggingAdvice: writing Log #1");
+    }
+
+
+
+    @Before("allReturnMethodsFromUniLibrary()")
+    public void beforeReturnLoggingAdvice(){
+        System.out.println("beforeReturnLoggingAdvice: writing Log #2");
+    }
+
+    @Before("allGetAndReturnMethodsFromUniLibrary()")
+    public void beforeGeAndReturnLoggingAdvice() {
+        System.out.println("beforeGetAndReturnLoggingAdvice: writing Log #3");
+    }
+
+
+
+/*    // Объявление Pointcut
     @Pointcut("execution(* get*())")
     private void allGetMethods() {
 
@@ -26,6 +63,6 @@ public class LoggingAndSecurityAspect {
     public void beforeGetSecurityAdvice() {
         // здесь указывается что проверка осуществляется
         System.out.println("beforeGetSecurityAdvice: проверка прав на получение" + "книги/журнала");
-    }
+    }*/
 
 }
