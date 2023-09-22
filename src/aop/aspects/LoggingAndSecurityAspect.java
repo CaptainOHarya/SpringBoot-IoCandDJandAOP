@@ -8,7 +8,41 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class LoggingAndSecurityAspect {
-    // Объявление Pointcut для get методов
+
+    // Pointcut, который подходит всем методам UniLibrary
+    @Pointcut("execution(* aop.UniLibrary.*(..))")
+    private void allMethodsFromUniLibrary() {
+
+    }
+
+    // Pointcut, который подходит методу returnMagazine()
+    @Pointcut("execution(public void aop.UniLibrary.returnMagazine())")
+    private void returnMagazineFromUniLibrary() {
+
+    }
+
+    // Комбинированный Pointcut
+    @Pointcut("allMethodsFromUniLibrary() && !returnMagazineFromUniLibrary()")
+    private void allMethodsExceptReturnMagazineFromUniLibrary(){
+
+    }
+
+    @Before("allMethodsExceptReturnMagazineFromUniLibrary()")
+    public void beforeAllMethodsExceptReturnMagazineAdvice() {
+        System.out.println("beforeAllMethodsExceptReturnMagazineAdvice: Log #55");
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /*// Объявление Pointcut для get методов
     @Pointcut("execution(* aop.UniLibrary.get*())")
     private void allGetMethodsFromUniLibrary() {
 
@@ -41,7 +75,7 @@ public class LoggingAndSecurityAspect {
     @Before("allGetAndReturnMethodsFromUniLibrary()")
     public void beforeGeAndReturnLoggingAdvice() {
         System.out.println("beforeGetAndReturnLoggingAdvice: writing Log #3");
-    }
+    }*/
 
 
 
