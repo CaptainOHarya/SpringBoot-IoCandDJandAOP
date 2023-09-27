@@ -8,9 +8,10 @@ public class Test1 {
         UniLibrary uniLibrary = context.getBean("uniLibrary", UniLibrary.class);
         //Book book = context.getBean("book", Book.class);
         uniLibrary.getBook();
-        uniLibrary.returnMagazine();
+        uniLibrary.getMagazine();
+        //uniLibrary.returnMagazine();
         // а этот метод не подходит под Pointcuts
-        uniLibrary.addBook();
+        //uniLibrary.addBook();
 
       //  uniLibrary.returnBook();
        // uniLibrary.getMagazine();
