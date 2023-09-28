@@ -6,8 +6,8 @@ public class MyPointcuts {
 
 
     // Объявление Pointcut
-    @Pointcut("execution(* get*())")
-    public void allGetMethods() { // public , т.к. он должен быть виден в других классах
+    @Pointcut("execution(* add*(..))")
+    public void allAddMethods() { // public , т.к. он должен быть виден в других классах
 
     }
 }

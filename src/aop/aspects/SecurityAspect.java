@@ -10,9 +10,10 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Order(2)
 public class SecurityAspect {
-    @Before("aop.aspects.MyPointcuts.allGetMethods()")// Здесь необходимо написать полное имя, т.к. расположены в разных классах
-    public void beforeGetSecurityAdvice() {
+    @Before("aop.aspects.MyPointcuts.allAddMethods()")// Здесь необходимо написать полное имя, т.к. расположены в разных классах
+    public void beforeAddSecurityAdvice() {
         // здесь указывается что проверка осуществляется
         System.out.println("beforeGetSecurityAdvice: проверка прав на получение" + "книги/журнала");
+        System.out.println("____________________________________________________________");
     }
 }
