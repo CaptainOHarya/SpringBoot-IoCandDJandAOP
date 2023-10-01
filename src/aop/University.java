@@ -19,6 +19,9 @@ public class University {
     }
 
     public List<Student> getStudents(){
+        System.out.println("Начало работы метода getStudents");
+        System.out.println(students.get(3)); // такого студента у нас нет, поэтому выбросится исключение
+
         System.out.println("Информация о студентах:");
         System.out.println(students);
 
