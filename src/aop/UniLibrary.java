@@ -14,6 +14,7 @@ public class UniLibrary extends AbstractLibrary {
     }
 
     public String returnBook() {
+        int a = 10/0;
         System.out.println("Мы возвращаем книгу в библиотеку Университета");
         return "Один день таланта Леонида Зулина";
 
